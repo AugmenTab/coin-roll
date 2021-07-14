@@ -4,8 +4,37 @@ This application is a proof-of-concept for a customizable cryptocurrency dashboa
 
 ## Implementations
 
-* [Coin Roll Python](coinroll-python/README.md): The first implementation of this project was written in [Python 3](https://www.python.org/), using [FastAPI](https://fastapi.tiangolo.com/) with [Uvicorn](https://www.uvicorn.org/), [Asyncio](https://docs.python.org/3/library/asyncio.html), [Celery](https://docs.celeryproject.org/en/stable/index.html) with [RabbitMQ](https://www.rabbitmq.com/), and [Pydantic](https://pydantic-docs.helpmanual.io/). The database was [MongoDB](https://www.mongodb.com/) using [MongoEngine](http://mongoengine.org/). Testing was done with [Pytest](https://docs.pytest.org/en/6.2.x/).
+* [Coin Roll Python](https://github.com/AugmenTab/coinroll-python): The first implementation of this project was written in [Python 3](https://www.python.org/), using [FastAPI](https://fastapi.tiangolo.com/) with [Uvicorn](https://www.uvicorn.org/), [Asyncio](https://docs.python.org/3/library/asyncio.html), [Celery](https://docs.celeryproject.org/en/stable/index.html) with [RabbitMQ](https://www.rabbitmq.com/), and [Pydantic](https://pydantic-docs.helpmanual.io/). The database was [MongoDB](https://www.mongodb.com/) using [MongoEngine](http://mongoengine.org/). Testing was done with [Pytest](https://docs.pytest.org/en/6.2.x/).
 * [Coin Roll Haskell](https://github.com/AugmenTab/coinroll-haskell): Currently still in the planning phase, the [Haskell](https://www.haskell.org/) implementation will be built on either [Servant](https://docs.servant.dev/en/stable/), [WAI](https://hackage.haskell.org/package/wai), or [Yesod](https://www.yesodweb.com/). The database will be either [MongoDB](https://www.mongodb.com/) or [PostgreSQL](https://www.postgresql.org/). Testing will likely be done with [QuickCheck](https://hackage.haskell.org/package/QuickCheck).
+
+## Endpoints
+
+* `GET /`
+    * Returns the user's watchlist.
+* `POST /watch`
+    * Adds a cryptocurrency to the user's watchlist.
+    * Request Body: `Watch`
+* `DELETE /watch`
+    * Removes a cryptocurrency from the user's watchlist.
+    * Request Body: `Watch`
+* `POST /buy`
+    * Adds a purchase record to the user's transaction history.
+    * Request Body: `Transaction`
+* `POST /sell`
+    * Adds a sell record to the user's transaction history.
+    * Request Body: `Transaction`
+* `GET /records`
+    * Returns the user's complete transaction history.
+* `GET /records/{coin_name}`
+    * Returns the user's transaction history for the provided cryptocurrency.
+    * Path Parameters:
+        * `coin_name`: The common name for the cryptocurrency.
+* `GET /summary`
+    * Returns a complete summary for the user's cryptocurrency investment portfolio.
+* `GET /summary/{coin_name}`
+    * Returns a summary for the user's investment portfolio concerning a particular cryptocurrency.
+    * Path Parameters:
+        * `coin_name`: The common name for the cryptocurrency.
 
 ## Common Technology Used
 
