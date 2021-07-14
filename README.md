@@ -4,8 +4,26 @@ This application is a proof-of-concept for a customizable cryptocurrency dashboa
 
 ## Implementations
 
-* [Coin Roll Python](/coinroll-python): The first implementation of this project was written in [Python 3](https://www.python.org/), using [FastAPI](https://fastapi.tiangolo.com/) with [Uvicorn](https://www.uvicorn.org/), [Asyncio](https://docs.python.org/3/library/asyncio.html), [Celery](https://docs.celeryproject.org/en/stable/index.html) with [RabbitMQ](https://www.rabbitmq.com/), and [Pydantic](https://pydantic-docs.helpmanual.io/). The database was [MongoDB](https://www.mongodb.com/) using [MongoEngine](http://mongoengine.org/). Testing was done with [Pytest](https://docs.pytest.org/en/6.2.x/).
-* [Coin Roll Haskell](/coinroll-haskell): Currently still in the planning phase, the [Haskell](https://www.haskell.org/) implementation will be built on either [Servant](https://docs.servant.dev/en/stable/), [WAI](https://hackage.haskell.org/package/wai), or [Yesod](https://www.yesodweb.com/). The database will be either [MongoDB](https://www.mongodb.com/) or [PostgreSQL](https://www.postgresql.org/). Testing will likely be done with [QuickCheck](https://hackage.haskell.org/package/QuickCheck).
+* [Coin Roll Python](coinroll-python/README.md): The first implementation of this project was written in [Python 3](https://www.python.org/), using [FastAPI](https://fastapi.tiangolo.com/) with [Uvicorn](https://www.uvicorn.org/), [Asyncio](https://docs.python.org/3/library/asyncio.html), [Celery](https://docs.celeryproject.org/en/stable/index.html) with [RabbitMQ](https://www.rabbitmq.com/), and [Pydantic](https://pydantic-docs.helpmanual.io/). The database was [MongoDB](https://www.mongodb.com/) using [MongoEngine](http://mongoengine.org/). Testing was done with [Pytest](https://docs.pytest.org/en/6.2.x/).
+* [Coin Roll Haskell](https://github.com/AugmenTab/coinroll-haskell): Currently still in the planning phase, the [Haskell](https://www.haskell.org/) implementation will be built on either [Servant](https://docs.servant.dev/en/stable/), [WAI](https://hackage.haskell.org/package/wai), or [Yesod](https://www.yesodweb.com/). The database will be either [MongoDB](https://www.mongodb.com/) or [PostgreSQL](https://www.postgresql.org/). Testing will likely be done with [QuickCheck](https://hackage.haskell.org/package/QuickCheck).
+
+## Common Technology Used
+
+Below is a list of all the important technology used in the production of all implementations of Coin Roll.
+
+### Development Environment
+
+* [Docker](https://www.docker.com/): Each app lives in Docker containers managed using the Docker Desktop app for Windows.
+* [Docker Compose](https://docs.docker.com/compose/): This is used to set up a virtual development environment to host all of the servers the applications utilize in order to function.
+
+### Code Quality &amp; Continuous Integration
+
+* [CircleCI](https://circleci.com/): This performs unit tests and ensures their passing after any commits are pushed to GitHub.
+* [githooks](https://git-scm.com/docs/githooks): A number of fairly simple pre-commit githooks run unit tests, and block the commit if the tests fail.
+
+### External Services
+
+* [CoinMarketCap API](https://coinmarketcap.com/api/): The API I chose to use for providing cryptocurrency information. The Basic level is free, and permits 333 "credits" (typically a call with less than 100 coins on it will cost a single credit) per day, and up to 10,000 "credits" per month. It has a much more limited suite of information available, but for this proof of concept, it is more than sufficient.
 
 ## Future Planned Implementations
 
