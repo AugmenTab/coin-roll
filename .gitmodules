@@ -1,0 +1,6 @@
+[submodule "coinroll-python"]
+	path = coinroll-python
+	url = git@github.com:AugmenTab/coinroll-python.git
+[submodule "coinroll-haskell"]
+	path = coinroll-haskell
+	url = git@github.com:AugmenTab/coinroll-haskell.git
