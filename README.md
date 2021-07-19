@@ -5,7 +5,7 @@ This application is a proof-of-concept for a customizable cryptocurrency dashboa
 ## Implementations
 
 * [Coin Roll Python](https://github.com/AugmenTab/coinroll-python): The first implementation of this project was written in [Python 3](https://www.python.org/), using [FastAPI](https://fastapi.tiangolo.com/) with [Uvicorn](https://www.uvicorn.org/), [Asyncio](https://docs.python.org/3/library/asyncio.html), [Celery](https://docs.celeryproject.org/en/stable/index.html) with [RabbitMQ](https://www.rabbitmq.com/), and [Pydantic](https://pydantic-docs.helpmanual.io/). The database was [MongoDB](https://www.mongodb.com/) using [MongoEngine](http://mongoengine.org/). Testing was done with [Pytest](https://docs.pytest.org/en/6.2.x/).
-* [Coin Roll Haskell](https://github.com/AugmenTab/coinroll-haskell): Currently still in the planning phase, the [Haskell](https://www.haskell.org/) implementation will be built on either [Servant](https://docs.servant.dev/en/stable/), [WAI](https://hackage.haskell.org/package/wai), or [Yesod](https://www.yesodweb.com/). The database will be either [MongoDB](https://www.mongodb.com/) or [PostgreSQL](https://www.postgresql.org/). Testing will likely be done with [QuickCheck](https://hackage.haskell.org/package/QuickCheck).
+* [Coin Roll Haskell](https://github.com/AugmenTab/coinroll-haskell): Currently still in the planning phase, the [Haskell](https://www.haskell.org/) implementation will be built on [Yesod](https://www.yesodweb.com/). The database will be [PostgreSQL](https://www.postgresql.org/). Testing will be done with [QuickCheck](https://hackage.haskell.org/package/QuickCheck).
 
 ## Endpoints
 
